@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Yes or No Question</title>
+  <script>
+    function checkOption() {
+      var yesRadio = document.getElementById("yes");
+      if (yesRadio.checked) {
+        window.location.href = "shyamsecond.html"; // Replace with your desired URL
+      }
+    }
+
+    function showMessage() {
+      var noRadio = document.getElementById("no");
+      if (noRadio.checked) {
+        alert("Please select Yes🥺.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>Do you like coding?</h2>
+  <form>
+    <label for="yes">Yes</label>
+    <input type="radio" id="yes" name="coding" value="yes" onchange="checkOption()">
+    <br>
+    <label for="no">No</label>
+    <input type="radio" id="no" name="coding" value="no" onchange="showMessage()">
+  </form>
+</body>
+</html>
