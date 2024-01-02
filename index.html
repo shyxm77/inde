@@ -2,31 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Yes or No Question</title>
-  <script>
-    function checkOption() {
-      var yesRadio = document.getElementById("yes");
-      if (yesRadio.checked) {
-        window.location.href = "shyamsecond.html"; // Replace with your desired URL
-      }
-    }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Linking the external CSS file -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
+</head>
+<body class="login-page">
 
-    function showMessage() {
-      var noRadio = document.getElementById("no");
-      if (noRadio.checked) {
-        alert("Please select Yes🥺.");
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm" onsubmit="return validateForm()">
+      <div>
+        <label for="username"><i class="fas fa-user"></i> Enter MY DOB:</label>
+        <input type="text" id="username" name="username" placeholder="">
+      </div>
+      <div>
+        <input type="submit" value="Login">
+      </div>
+    </form>
+    <p class="love">Essence of our Yesterday 🖤</p>
+  </div>
+
+  <div class="welcome-section" style="display: none;">
+    <i class="fas fa-check-circle welcome-icon"></i>
+    <h1 class="welcome-message">Welcome, !</h1>
+    <!-- Additional welcome content -->
+  </div>
+
+  <script>
+    function validateForm() {
+      var username = document.getElementById('username').value;
+
+      if (username.toLowerCase() !== '03032006') {
+        window.location.href = 'redirect.html?status=failure'; // Redirect to failure page
+        return false;
+      } else {
+        window.location.href = 'second-page.html'; // Redirect to second page
+        return false;
       }
     }
   </script>
-</head>
-<body>
-  <h2>Do you Like</h2>
-  <form>
-    <label for="yes">Yes</label>
-    <input type="radio" id="yes" name="coding" value="yes" onchange="checkOption()">
-    <br>
-    <label for="no">No</label>
-    <input type="radio" id="no" name="coding" value="no" onchange="showMessage()">
-  </form>
+
 </body>
 </html>
